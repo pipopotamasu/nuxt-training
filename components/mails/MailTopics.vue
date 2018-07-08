@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .mail-topics {
   background-color: green;
   width: 100%;
@@ -30,13 +30,15 @@
 }
 
 /* リストの横並び */
-.choices ul {
-  font-size: 0;
-}
-.choices li {
-  background-color: #00ff00;
-  display: inline-block;
-  font-size: 12px;
-  width: 25%;
+.choices {
+  ul {
+    font-size: 0;
+  }
+  li {
+    background-color: #00ff00;
+    display: inline-block;
+    font-size: 12px;
+    width: 25%;
+  }
 }
 </style>

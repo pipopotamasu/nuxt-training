@@ -7,15 +7,15 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .target-user {
   width: 100%;
   text-align: left;
   padding: 0.5em 1em;
   background-color: blue;
-}
 
-span {
-  padding: 0 0.25em;
+  span {
+    padding: 0 0.25em;
+  }
 }
 </style>
