@@ -1,15 +1,18 @@
 <template>
-  <section class="container anonymous-mail-new">
+  <article class="container mail-new">
     <target-user></target-user>
-  </section>
+    <mail-topics></mail-topics>
+  </article>
 </template>
 
 <script>
 import TargetUser from '~/components/mails/TargetUser.vue'
+import MailTopics from '~/components/mails/MailTopics.vue'
 
 export default {
   components: {
-    TargetUser
+    TargetUser,
+    MailTopics
   }
 }
 </script>
@@ -20,5 +23,6 @@ export default {
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 </style>
