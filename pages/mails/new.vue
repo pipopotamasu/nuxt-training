@@ -4,6 +4,7 @@
     <mail-topics></mail-topics>
     <reply-deadline></reply-deadline>
     <from-users></from-users>
+    <mail-button></mail-button>
   </article>
 </template>
 
@@ -12,15 +13,15 @@ import TargetUser from '~/components/mails/TargetUser.vue'
 import MailTopics from '~/components/mails/MailTopics.vue'
 import ReplyDeadline from '~/components/mails/ReplyDeadline.vue'
 import FromUsers from '~/components/mails/FromUsers.vue'
-
-
+import MailButton from '~/components/mails/MailButton.vue'
 
 export default {
   components: {
     TargetUser,
     MailTopics,
     ReplyDeadline,
-    FromUsers
+    FromUsers,
+    MailButton
   }
 }
 </script>
