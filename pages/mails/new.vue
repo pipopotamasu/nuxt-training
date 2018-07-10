@@ -1,5 +1,6 @@
 <template>
   <article class="container mail-new">
+    {{hoge}}
     <target-user></target-user>
     <mail-topics></mail-topics>
     <reply-deadline></reply-deadline>
@@ -9,6 +10,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import TargetUser from '~/components/mails/TargetUser.vue'
 import MailTopics from '~/components/mails/MailTopics.vue'
 import ReplyDeadline from '~/components/mails/ReplyDeadline.vue'
@@ -22,6 +24,9 @@ export default {
     ReplyDeadline,
     FromUsers,
     MailButton
+  },
+  computed: {
+    hoge () { return this.$store.state.mails.hoge }
   }
 }
 </script>
