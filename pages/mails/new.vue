@@ -1,7 +1,6 @@
 <template>
   <article class="container mail-new">
-    {{hoge}}
-    <target-user></target-user>
+    <target-user :user="targetUser"></target-user>
     <mail-topics></mail-topics>
     <reply-deadline></reply-deadline>
     <from-users></from-users>
@@ -10,7 +9,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapState } from 'vuex'
 import TargetUser from '~/components/mails/TargetUser.vue'
 import MailTopics from '~/components/mails/MailTopics.vue'
 import ReplyDeadline from '~/components/mails/ReplyDeadline.vue'
@@ -26,7 +25,16 @@ export default {
     MailButton
   },
   computed: {
-    hoge () { return this.$store.state.mails.hoge }
+    targetUser () { return this.$store.state.mails.targetUser }
+  },
+  created () {
+    // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
+    this.$store.dispatch('mails/setTargetUser', {
+      icon_path: "path_to_icon",
+      last_name: "村上",
+      first_name: "大和",
+      sex: 1
+    })
   }
 }
 </script>
