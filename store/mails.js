@@ -1,6 +1,6 @@
 export const state = () => ({
   targetUser: {
-    // NOTE: データ例
+    // NOTE: example
     // icon_path: "path_to_icon",
     // last_name: "村上",
     // first_name: "大和",

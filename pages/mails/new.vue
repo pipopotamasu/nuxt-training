@@ -30,7 +30,7 @@ export default {
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
     this.$store.dispatch('mails/setTargetUser', {
-      icon_path: "path_to_icon",
+      icon_path: "../icons/wakabayashi.jpg",
       last_name: "村上",
       first_name: "大和",
       sex: 1

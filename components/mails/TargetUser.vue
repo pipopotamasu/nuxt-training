@@ -1,15 +1,23 @@
 <template>
   <div class="target-user">
-    {{ user.first_name }}
-    <span>To</span>
-    <span class="user-icon">村上大和のアイコン</span>
-    <span class="user-fullname">村上大和</span>
-    <span class="user-sex-icon">男のアイコン</span>
+    <span class="user-item">To</span>
+    <user-icon class="user-item" :icon_path="user.icon_path"></user-icon>
+    <user-name class="user-item" :last_name="user.last_name" :first_name="user.first_name"></user-name>
+    <sex-icon class="user-item" :sex="user.sex"></sex-icon>
   </div>
 </template>
 
 <script>
+import UserIcon from "~/components/atoms/users/UserIcon.vue"
+import UserName from "~/components/atoms/users/UserName.vue"
+import SexIcon from "~/components/atoms/users/SexIcon.vue"
+
 export default {
+  components: {
+    UserIcon,
+    UserName,
+    SexIcon
+  },
   props: {
     user: {
       type: Object,
@@ -26,8 +34,8 @@ export default {
   padding: 0.5em 1em;
   background-color: blue;
 
-  span {
-    padding: 0 0.25em;
+  .user-item {
+    padding: 0 0.5em;
   }
 }
 </style>
