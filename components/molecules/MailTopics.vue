@@ -2,9 +2,9 @@
   <div class="mail-topics">
     <span>Q.質問項目</span>
     <ol class="topics">
-      <li v-for="topic in topics"
+      <li v-for="(topic, i) in topics"
         :key="topic.id"
-        @click="$store.dispatch('mails/toggleActivation', topic.id)"
+        @click="$store.dispatch('mails/toggleActivation', i)"
       >{{topic.content}}</li>
     </ol>
     <ul class="choices">

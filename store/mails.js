@@ -19,14 +19,7 @@ export const actions = {
   setTargetUser({ commit }, user) {
     commit("setTargetUser", user);
   },
-  toggleActivation({ commit, state }, topicId) {
-    let toggleIndex;
-    state.topics.forEach((topic, i) => {
-      if (topic.id === topicId) {
-        toggleIndex = i
-        return
-      }
-    });
+  toggleActivation({ commit, state }, toggleIndex) {
     commit("toggleActivation", toggleIndex);
   }
 };
