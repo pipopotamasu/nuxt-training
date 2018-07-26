@@ -26,7 +26,7 @@ export const actions = {
 
 export const mutations = {
   setTargetUser(state, user) {
-    state.targetuser = user
+    state.targetUser = user
   },
   toggleActivation(state, toggleIndex) {
     state.topics[toggleIndex].active = !state.topics[toggleIndex].active;
