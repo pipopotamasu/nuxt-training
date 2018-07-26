@@ -1,8 +1,15 @@
 <template>
   <article class="container mail-new">
-    <target-user :user="targetUser"></target-user>
-    <mail-topics></mail-topics>
-    <reply-deadline></reply-deadline>
+    <target-user
+      :user="targetUser"
+    ></target-user>
+    <mail-topics
+      :topics="topics"
+      :toggle="i => $store.dispatch('mails/toggleActivation', i)"
+    ></mail-topics>
+    <reply-deadline
+      :setDate="date => $store.dispatch('mails/setReplyDeadlineDate', date[0])"
+    ></reply-deadline>
     <from-users></from-users>
     <mail-button></mail-button>
   </article>
@@ -12,7 +19,7 @@
 import { mapState } from 'vuex'
 import TargetUser from '~/components/molecules/TargetUser.vue'
 import MailTopics from '~/components/molecules/MailTopics.vue'
-import ReplyDeadline from '~/components/mails/ReplyDeadline.vue'
+import ReplyDeadline from '~/components/molecules/ReplyDeadline.vue'
 import FromUsers from '~/components/mails/FromUsers.vue'
 import MailButton from '~/components/mails/MailButton.vue'
 
@@ -26,6 +33,7 @@ export default {
   },
   computed: {
     targetUser () { return this.$store.state.mails.targetUser },
+    topics () { return this.$store.state.mails.topics }
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
