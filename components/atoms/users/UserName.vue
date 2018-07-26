@@ -16,11 +16,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.user-icon {
-  border-radius: 50%;
-  width: 2em;
-  margin-bottom: -0.5em;
-}
-</style>
