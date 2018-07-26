@@ -5,17 +5,37 @@ export const state = () => ({
     // last_name: "村上",
     // first_name: "大和",
     // sex: 1
-  }
+  },
+  topics: [
+    // firebaseの方でどういう風にデータを持つか検討しなければいけない。
+    // 一旦仮置きしておく。
+    { id: 1, content: '私と付き合えますか？', active: false },
+    { id: 2, content: '私とどのくらい性格が合いますか？', active: false },
+    { id: 3, content: '私をどのくらい尊敬できますか？', active: false }
+  ]
 });
 
 export const actions = {
   setTargetUser({ commit }, user) {
     commit("setTargetUser", user);
+  },
+  toggleActivation({ commit, state }, topicId) {
+    let toggleIndex;
+    state.topics.forEach((topic, i) => {
+      if (topic.id === topicId) {
+        toggleIndex = i
+        return
+      }
+    });
+    commit("toggleActivation", toggleIndex);
   }
 };
 
 export const mutations = {
   setTargetUser(state, user) {
-    state.targetUser = user;
+    state.targetuser = user
+  },
+  toggleActivation(state, toggleIndex) {
+    state.topics[toggleIndex].active = !state.topics[toggleIndex].active;
   }
 };

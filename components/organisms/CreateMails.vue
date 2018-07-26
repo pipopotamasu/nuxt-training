@@ -11,7 +11,7 @@
 <script>
 import { mapState } from 'vuex'
 import TargetUser from '~/components/molecules/TargetUser.vue'
-import MailTopics from '~/components/mails/MailTopics.vue'
+import MailTopics from '~/components/molecules/MailTopics.vue'
 import ReplyDeadline from '~/components/mails/ReplyDeadline.vue'
 import FromUsers from '~/components/mails/FromUsers.vue'
 import MailButton from '~/components/mails/MailButton.vue'
@@ -25,7 +25,7 @@ export default {
     MailButton
   },
   computed: {
-    targetUser () { return this.$store.state.mails.targetUser }
+    targetUser () { return this.$store.state.mails.targetUser },
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
