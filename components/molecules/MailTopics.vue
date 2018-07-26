@@ -4,6 +4,7 @@
     <ol class="topics">
       <li v-for="(topic, i) in topics"
         :key="topic.id"
+        :class="{ active: topic.active }"
         @click="$store.dispatch('mails/toggleActivation', i)"
       >{{topic.content}}</li>
     </ol>
@@ -34,6 +35,11 @@ export default {
 
   .topics {
     text-align: left;
+
+    li.active {
+      cursor: pointer;
+      color: red;
+    }
   }
 
   .choices {
