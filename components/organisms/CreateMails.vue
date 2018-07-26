@@ -1,7 +1,12 @@
 <template>
   <article class="container mail-new">
-    <target-user :user="targetUser"></target-user>
-    <mail-topics></mail-topics>
+    <target-user
+      :user="targetUser"
+    ></target-user>
+    <mail-topics
+      :topics="topics"
+      :toggle="(i) => $store.dispatch('mails/toggleActivation', i)"
+    ></mail-topics>
     <reply-deadline></reply-deadline>
     <from-users></from-users>
     <mail-button></mail-button>
@@ -26,6 +31,7 @@ export default {
   },
   computed: {
     targetUser () { return this.$store.state.mails.targetUser },
+    topics () { return this.$store.state.mails.topics }
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき

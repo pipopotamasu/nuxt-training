@@ -5,7 +5,7 @@
       <li v-for="(topic, i) in topics"
         :key="topic.id"
         :class="{ active: topic.active }"
-        @click="$store.dispatch('mails/toggleActivation', i)"
+        @click="toggle(i)"
       >{{topic.content}}</li>
     </ol>
     <ul class="choices">
@@ -18,11 +18,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
 
 export default {
-  computed: {
-    topics () { return this.$store.state.mails.topics }
+  props: {
+    topics: {
+      type: Array,
+      required: true
+    },
+    toggle: {
+      type: Function,
+      required: true
+    }
   }
 }
 </script>
