@@ -43,7 +43,11 @@ export const actions = {
   },
   toggleActivation({ commit, state }, toggleIndex) {
     commit("toggleActivation", toggleIndex);
-  }
+  },
+  deleteFromUser({ commit }, user) {
+    console.log(user)
+    // commit("deleteFromUser", user);
+  },
 };
 
 export const mutations = {

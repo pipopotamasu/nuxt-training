@@ -13,6 +13,7 @@
     <from-users
       :currentUser="currentUser"
       :fromUsers="fromUsers"
+      :deleteFromUser="user => $store.dispatch('mails/deleteFromUser', user)"
     ></from-users>
     <mail-button></mail-button>
   </article>

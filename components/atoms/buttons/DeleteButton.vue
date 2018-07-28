@@ -1,6 +1,17 @@
 <template>
-  <span class="user-delete">×</span>
+  <span class="user-delete" @click="onDelete">×</span>
 </template>
+
+<script>
+export default {
+  props: {
+    onDelete: {
+      type: Function,
+      require: true
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 .user-delete {

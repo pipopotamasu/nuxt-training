@@ -12,7 +12,7 @@
       <div class="user" v-for="user in fromUsers" :key="user.id">
         <user-icon :icon_path="user.icon_path" class="user-element"></user-icon>
         <user-name :last_name="user.last_name" :first_name="user.first_name" class="user-element"></user-name>
-        <delete-button class="user-delete"></delete-button>
+        <delete-button class="user-delete" :onDelete="onDelete(user)"></delete-button>
       </div>
     </div>
   </div>
@@ -41,11 +41,20 @@ export default {
     fromUsers: {
       type: Array,
       require: true
+    },
+    deleteFromUser: {
+      type: Function,
+      require: true
     }
   },
   computed: {
     fromUsersCount () {
       return this.fromUsers.length + 1
+    }
+  },
+  methods: {
+    onDelete (user) {
+       return () => this.deleteFromUser(user)
     }
   }
 }
