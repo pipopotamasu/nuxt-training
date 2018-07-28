@@ -10,7 +10,10 @@
     <reply-deadline
       :setDate="date => $store.dispatch('mails/setReplyDeadlineDate', date[0])"
     ></reply-deadline>
-    <from-users></from-users>
+    <from-users
+      :currentUser="currentUser"
+      :fromUsers="fromUsers"
+    ></from-users>
     <mail-button></mail-button>
   </article>
 </template>
@@ -20,7 +23,7 @@ import { mapState } from 'vuex'
 import TargetUser from '~/components/molecules/TargetUser.vue'
 import MailTopics from '~/components/molecules/MailTopics.vue'
 import ReplyDeadline from '~/components/molecules/ReplyDeadline.vue'
-import FromUsers from '~/components/mails/FromUsers.vue'
+import FromUsers from '~/components/molecules/FromUsers.vue'
 import MailButton from '~/components/mails/MailButton.vue'
 
 export default {
@@ -33,11 +36,14 @@ export default {
   },
   computed: {
     targetUser () { return this.$store.state.mails.targetUser },
-    topics () { return this.$store.state.mails.topics }
+    topics () { return this.$store.state.mails.topics },
+    currentUser () { return this.$store.state.user.currentUser },
+    fromUsers () { return this.$store.state.mails.fromUsers },
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
     this.$store.dispatch('mails/setTargetUser', {
+      id: 4,
       icon_path: "../icons/wakabayashi.jpg",
       last_name: "村上",
       first_name: "大和",

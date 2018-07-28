@@ -1,11 +1,29 @@
 export const state = () => ({
   targetUser: {
     // NOTE: example
+    // id: 4,
     // icon_path: "path_to_icon",
     // last_name: "村上",
     // first_name: "大和",
     // sex: 1
   },
+  fromUsers: [
+    // NOTE: 取り急ぎテストデータ
+    {
+      id: 1,
+      icon_path: "../icons/wakabayashi.jpg",
+      last_name: "山田",
+      first_name: "太郎",
+      sex: 1
+    },
+    {
+      id: 2,
+      icon_path: "../icons/wakabayashi.jpg",
+      last_name: "山田",
+      first_name: "太郎",
+      sex: 1
+    },
+  ],
   topics: [
     // firebaseの方でどういう風にデータを持つか検討しなければいけない。
     // 一旦仮置きしておく。
