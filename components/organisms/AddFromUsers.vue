@@ -1,38 +1,35 @@
 <template>
   <div class="add-from-users">
-    <search-box></search-box>
-    <room-users :roomUsers="roomUsers"></room-users>
+    <search-box :search="filterUsers"></search-box>
+    <room-users :roomUsers="users"></room-users>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import SearchBox from '~/components/molecules/SearchBox.vue'
 import RoomUsers from '~/components/molecules/RoomUsers.vue'
 
 export default {
   data () {
     return {
-      roomUsers: [
-        {
-          id: 5,
-          icon_path: "../icons/wakabayashi.jpg",
-          last_name: "山田",
-          first_name: "太郎",
-          sex: 1
-        },
-        {
-          id: 6,
-          icon_path: "../icons/wakabayashi.jpg",
-          last_name: "山田",
-          first_name: "太郎",
-          sex: 1
-        },
-      ]
+      users: []
     }
   },
   components: {
     SearchBox,
     RoomUsers
+  },
+  computed: {
+    allUsers () { return this.$store.state.room.users },
+  },
+  created () {
+    this.users = this.allUsers
+  },
+  methods: {
+    filterUsers (word) {
+      this.users = this.$store.getters['room/filterUsers'](word)
+    }
   }
 }
 </script>
