@@ -2,7 +2,7 @@
   <div class="from-users">
     <div class="header">
       <user-counter :numerator="fromUsersCount" :denominator="5"></user-counter>
-      <add-button><label>メンバー追加</label></add-button>
+      <add-button><nuxt-link to="/mails/select_from_users"><label>メンバー追加</label></nuxt-link></add-button>
     </div>
     <div class="users">
       <div class="user current-user">
