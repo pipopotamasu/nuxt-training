@@ -5,15 +5,15 @@
     ></target-user>
     <mail-topics
       :topics="topics"
-      :toggle="i => $store.dispatch('mails/toggleActivation', i)"
+      :toggle="i => $store.dispatch('mail/toggleActivation', i)"
     ></mail-topics>
     <reply-deadline
-      :setDate="date => $store.dispatch('mails/setReplyDeadlineDate', date[0])"
+      :setDate="date => $store.dispatch('mail/setReplyDeadlineDate', date[0])"
     ></reply-deadline>
     <from-users
       :currentUser="currentUser"
       :fromUsers="fromUsers"
-      :deleteFromUser="user => $store.dispatch('mails/deleteFromUser', user)"
+      :deleteFromUser="user => $store.dispatch('mail/deleteFromUser', user)"
     ></from-users>
     <mail-button></mail-button>
   </article>
@@ -36,10 +36,10 @@ export default {
     MailButton
   },
   computed: {
-    targetUser () { return this.$store.state.mails.targetUser },
-    topics () { return this.$store.state.mails.topics },
-    currentUser () { return this.$store.state.user.currentUser },
-    fromUsers () { return this.$store.state.mails.fromUsers },
+    targetUser () { return this.$store.state.mail.targetUser },
+    topics () { return this.$store.state.mail.topics },
+    currentUser () { return this.$store.state.user_info.currentUser },
+    fromUsers () { return this.$store.state.mail.fromUsers },
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
