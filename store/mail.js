@@ -8,21 +8,6 @@ export const state = () => ({
     // sex: 1
   },
   fromUsers: [
-    // NOTE: 取り急ぎテストデータ
-    {
-      id: 1,
-      icon_path: "../icons/wakabayashi.jpg",
-      last_name: "山田",
-      first_name: "太郎",
-      sex: 1
-    },
-    {
-      id: 2,
-      icon_path: "../icons/wakabayashi.jpg",
-      last_name: "山田",
-      first_name: "太郎",
-      sex: 1
-    },
   ],
   topics: [
     // firebaseの方でどういう風にデータを持つか検討しなければいけない。
@@ -41,13 +26,21 @@ export const actions = {
   setReplyDeadlineDate({ commit }, date) {
     commit("setReplyDeadlineDate", date);
   },
-  toggleActivation({ commit, state }, toggleIndex) {
+  toggleActivation({ commit }, toggleIndex) {
     commit("toggleActivation", toggleIndex);
   },
-  deleteFromUser({ commit }, user) {
-    console.log(user)
-    // commit("deleteFromUser", user);
+  deleteFromUser({ commit }, index) {
+    commit("deleteFromUser", index);
   },
+  setFromUser({ commit }, user) {
+    commit("setFromUser", user);
+  }
+};
+
+export const getters = {
+  fromUserIds(state) {
+    return state.fromUsers.map(user => user.id)
+  }
 };
 
 export const mutations = {
@@ -59,5 +52,11 @@ export const mutations = {
   },
   toggleActivation(state, toggleIndex) {
     state.topics[toggleIndex].active = !state.topics[toggleIndex].active;
-  }
+  },
+  deleteFromUser(state, index) {
+    state.fromUsers.splice(index, 1)
+  },
+  setFromUser(state, user) {
+    state.fromUsers.push(user)
+  },
 };
