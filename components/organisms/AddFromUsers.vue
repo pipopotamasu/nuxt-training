@@ -26,11 +26,8 @@ export default {
     SearchBox,
     RoomUsers
   },
-  computed: {
-    allUsers () { return this.$store.state.room.users },
-  },
   created () {
-    this.users = this.allUsers
+    this.filterUsers('')
   },
   methods: {
     filterUsers (word) {

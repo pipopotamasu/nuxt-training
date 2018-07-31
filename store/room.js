@@ -1,19 +1,5 @@
 export const state = () => ({
-  users: [
-    {
-      id: 3,
-      icon_path: "../icons/wakabayashi.jpg",
-      last_name: "半沢",
-      first_name: "直樹",
-      sex: 1
-    },
-    {
-      id: 4,
-      icon_path: "../icons/wakabayashi.jpg",
-      last_name: "村上",
-      first_name: "大和",
-      sex: 1
-    },
+  usersWithoutCurrentAndTargetUser: [
     {
       id: 5,
       icon_path: "../icons/wakabayashi.jpg",
@@ -43,8 +29,8 @@ export const actions = {
 
 export const getters = {
   filterUsers: (state) => (filterWord) => {
-    if (!filterWord) return state.users
-    return state.users.filter(
+    if (!filterWord) return state.usersWithoutCurrentAndTargetUser
+    return state.usersWithoutCurrentAndTargetUser.filter(
       user => (user.last_name + user.first_name).includes(filterWord)
     )
   }

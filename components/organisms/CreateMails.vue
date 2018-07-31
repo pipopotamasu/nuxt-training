@@ -41,7 +41,7 @@ export default {
     topics () { return this.$store.state.mail.topics },
     currentUser () { return this.$store.state.user_info.currentUser },
     fromUsers () { return this.$store.state.mail.fromUsers },
-    roomUsersCount () { return this.$store.state.room.users.length },
+    roomUsersCount () { return this.$store.state.room.usersWithoutCurrentAndTargetUser.length + 1 }, // 自分分を追加
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
