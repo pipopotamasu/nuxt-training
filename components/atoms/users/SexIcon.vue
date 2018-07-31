@@ -1,7 +1,7 @@
 <template>
   <div class="sex-icons">
-    <img v-if="sex === 1" class="sex-icon" src="https://png.icons8.com/color/1600/person-male.png" />
-    <img v-else class="sex-icon" src="https://png.icons8.com/office/1600/collaborator-female.png" />
+    <img v-if="sex === 1" class="sex-icon" src="https://png.icons8.com/color/1600/person-male.png" >
+    <img v-else class="sex-icon" src="https://png.icons8.com/office/1600/collaborator-female.png" >
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   props: {
     sex: {
       type: Number,
-      require: true
+      required: true
     }
   }
 }

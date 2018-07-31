@@ -6,10 +6,8 @@ export const state = () => ({
     first_name: "直樹",
     sex: 1
   }
-});
+})
 
-export const actions = {
-};
+export const actions = {}
 
-export const mutations = {
-};
+export const mutations = {}

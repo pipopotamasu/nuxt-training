@@ -18,7 +18,7 @@ export default {
     }
   },
   computed: {
-    counterText () {
+    counterText() {
       return `${this.numerator}/${this.denominator}`
     }
   }

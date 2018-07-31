@@ -1,9 +1,9 @@
 <template>
   <div class="users">
-    <div class="user" v-for="(user, i) in roomUsers" :key="user.id">
-      <check-box class="checkbox" :onChange="onChange(user, i)" :checked="fromUserIds.includes(user.id)"></check-box>
-      <user-icon :icon_path="user.icon_path" class="user-element"></user-icon>
-      <user-name :last_name="user.last_name" :first_name="user.first_name" class="user-element"></user-name>
+    <div v-for="(user, i) in roomUsers" :key="user.id" class="user">
+      <check-box :on-change="onChange(user, i)" :checked="fromUserIds.includes(user.id)" class="checkbox"/>
+      <user-icon :icon_path="user.icon_path" class="user-element"/>
+      <user-name :last_name="user.last_name" :first_name="user.first_name" class="user-element"/>
     </div>
   </div>
 </template>
@@ -14,6 +14,11 @@ import UserName from "~/components/atoms/users/UserName.vue"
 import CheckBox from "~/components/atoms/form/CheckBox.vue"
 
 export default {
+  components: {
+    UserIcon,
+    UserName,
+    CheckBox
+  },
   props: {
     roomUsers: {
       type: Array,
@@ -32,15 +37,10 @@ export default {
       required: true
     }
   },
-  components: {
-    UserIcon,
-    UserName,
-    CheckBox
-  },
   methods: {
-    onChange (user, index) {
-      return (e) => {
-        if(e.currentTarget.checked) {
+    onChange(user, index) {
+      return e => {
+        if (e.currentTarget.checked) {
           this.setFromUsers(user)
         } else {
           this.deleteFromUsers(index)

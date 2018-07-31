@@ -1,7 +1,7 @@
 <template>
   <div class="add">
     <span class="add-icon">+</span>
-    <slot></slot>
+    <slot/>
   </div>
 </template>
 

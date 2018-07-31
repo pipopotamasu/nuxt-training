@@ -1,27 +1,29 @@
 <template>
   <input
-    class="text-input"
-    type="text"
     :placeholder="placeholder"
     v-model="input"
-    @keyup="onKeyup(input)"/>
+    class="text-input"
+    type="text"
+    @keyup="onKeyup(input)">
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      input: ''
-    }
-  },
   props: {
     placeholder: {
       type: String,
-      required: false
+      required: false,
+      default: ""
     },
     onKeyup: {
       type: Function,
-      required: false
+      required: false,
+      default: () => {}
+    }
+  },
+  data() {
+    return {
+      input: ""
     }
   }
 }

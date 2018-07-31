@@ -1,9 +1,9 @@
 <template>
   <div class="target-user">
     <span class="user-item">To</span>
-    <user-icon class="user-item" :icon_path="user.icon_path"></user-icon>
-    <user-name class="user-item" :last_name="user.last_name" :first_name="user.first_name"></user-name>
-    <sex-icon class="user-item" :sex="user.sex"></sex-icon>
+    <user-icon :icon_path="user.icon_path" class="user-item"/>
+    <user-name :last_name="user.last_name" :first_name="user.first_name" class="user-item"/>
+    <sex-icon :sex="user.sex" class="user-item"/>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   props: {
     user: {
       type: Object,
-      require: true
+      required: true
     }
   }
 }

@@ -1,37 +1,35 @@
 <template>
   <div class="add-from-users">
-    <search-box :search="filterUsers"></search-box>
+    <search-box :search="filterUsers"/>
     <room-users
-      :roomUsers="users"
-      :fromUserIds="this.$store.getters['mail/fromUserIds']"
-      :setFromUsers="user => $store.dispatch('mail/setFromUser', user)"
-      :deleteFromUsers="user => $store.dispatch('mail/deleteFromUser', user)">
-      </room-users>
+      :room-users="users"
+      :from-user-ids="this.$store.getters['mail/fromUserIds']"
+      :set-from-users="user => $store.dispatch('mail/setFromUser', user)"
+      :delete-from-users="user => $store.dispatch('mail/deleteFromUser', user)"/>
     <button><nuxt-link to="/mails/new">戻る</nuxt-link></button>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-import SearchBox from '~/components/molecules/SearchBox.vue'
-import RoomUsers from '~/components/molecules/RoomUsers.vue'
+import SearchBox from "~/components/molecules/SearchBox.vue"
+import RoomUsers from "~/components/molecules/RoomUsers.vue"
 
 export default {
-  data () {
-    return {
-      users: []
-    }
-  },
   components: {
     SearchBox,
     RoomUsers
   },
-  created () {
-    this.filterUsers('')
+  data() {
+    return {
+      users: []
+    }
+  },
+  created() {
+    this.filterUsers("")
   },
   methods: {
-    filterUsers (word) {
-      this.users = this.$store.getters['room/filterUsers'](word)
+    filterUsers(word) {
+      this.users = this.$store.getters["room/filterUsers"](word)
     }
   }
 }

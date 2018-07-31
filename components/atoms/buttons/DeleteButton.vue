@@ -7,7 +7,7 @@ export default {
   props: {
     onDelete: {
       type: Function,
-      require: true
+      required: true
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <img class="user-icon" :src="icon_path" />
+  <img :src="icon_path" class="user-icon" >
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {
   props: {
     icon_path: {
       type: String,
-      require: true
+      required: true
     }
   }
 }
