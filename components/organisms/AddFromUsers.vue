@@ -3,6 +3,7 @@
     <search-box :search="filterUsers"></search-box>
     <room-users
       :roomUsers="users"
+      :fromUserIds="this.$store.getters['mail/fromUserIds']"
       :setFromUsers="user => $store.dispatch('mail/setFromUser', user)"
       :deleteFromUsers="user => $store.dispatch('mail/deleteFromUser', user)">
       </room-users>

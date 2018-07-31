@@ -37,6 +37,12 @@ export const actions = {
   }
 };
 
+export const getters = {
+  fromUserIds(state) {
+    return state.fromUsers.map(user => user.id)
+  }
+};
+
 export const mutations = {
   setTargetUser(state, user) {
     state.targetUser = user

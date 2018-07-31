@@ -1,7 +1,7 @@
 <template>
   <div class="users">
     <div class="user" v-for="(user, i) in roomUsers" :key="user.id">
-      <check-box class="checkbox" :onChange="onChange(user, i)"></check-box>
+      <check-box class="checkbox" :onChange="onChange(user, i)" :checked="fromUserIds.includes(user.id)"></check-box>
       <user-icon :icon_path="user.icon_path" class="user-element"></user-icon>
       <user-name :last_name="user.last_name" :first_name="user.first_name" class="user-element"></user-name>
     </div>
@@ -16,6 +16,10 @@ import CheckBox from "~/components/atoms/form/CheckBox.vue"
 export default {
   props: {
     roomUsers: {
+      type: Array,
+      required: true
+    },
+    fromUserIds: {
       type: Array,
       required: true
     },
