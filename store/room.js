@@ -1,6 +1,20 @@
 export const state = () => ({
   users: [
     {
+      id: 3,
+      icon_path: "../icons/wakabayashi.jpg",
+      last_name: "半沢",
+      first_name: "直樹",
+      sex: 1
+    },
+    {
+      id: 4,
+      icon_path: "../icons/wakabayashi.jpg",
+      last_name: "村上",
+      first_name: "大和",
+      sex: 1
+    },
+    {
       id: 5,
       icon_path: "../icons/wakabayashi.jpg",
       last_name: "山田",

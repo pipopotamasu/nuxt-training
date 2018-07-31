@@ -1,7 +1,7 @@
 <template>
   <div class="from-users">
     <div class="header">
-      <user-counter :numerator="fromUsersCount" :denominator="5"></user-counter>
+      <user-counter :numerator="fromUsersCount" :denominator="roomUsersCount"></user-counter>
       <add-button><nuxt-link to="/mails/select_from_users"><label>メンバー追加</label></nuxt-link></add-button>
     </div>
     <div class="users">
@@ -36,6 +36,10 @@ export default {
   props: {
     currentUser: {
       type: Object,
+      require: true
+    },
+    roomUsersCount: {
+      type: Number,
       require: true
     },
     fromUsers: {

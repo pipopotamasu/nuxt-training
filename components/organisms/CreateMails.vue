@@ -12,6 +12,7 @@
     ></reply-deadline>
     <from-users
       :currentUser="currentUser"
+      :roomUsersCount="roomUsersCount"
       :fromUsers="fromUsers"
       :deleteFromUser="user => $store.dispatch('mail/deleteFromUser', user)"
     ></from-users>
@@ -40,6 +41,7 @@ export default {
     topics () { return this.$store.state.mail.topics },
     currentUser () { return this.$store.state.user_info.currentUser },
     fromUsers () { return this.$store.state.mail.fromUsers },
+    roomUsersCount () { return this.$store.state.room.users.length },
   },
   created () {
     // NOTE: 本来ならこの画面に遷移する前にターゲットとなるユーザを設定すべき
