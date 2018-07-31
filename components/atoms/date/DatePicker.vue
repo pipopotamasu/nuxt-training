@@ -1,19 +1,13 @@
 <template>
-  <flat-pickr v-model="date" @on-change="setDate"></flat-pickr>
+  <flat-pickr v-model="date" @on-change="setDate"/>
 </template>
 
 <script>
-import flatPickr from 'vue-flatpickr-component';
+import flatPickr from "vue-flatpickr-component"
 // FIXME: なぜかcssが適用されない...
-import "flatpickr/dist/flatpickr.css";
-
+import "flatpickr/dist/flatpickr.css"
 
 export default {
-  data () {
-    return {
-      date: new Date()
-    }
-  },
   components: {
     flatPickr
   },
@@ -21,6 +15,11 @@ export default {
     setDate: {
       type: Function,
       required: true
+    }
+  },
+  data() {
+    return {
+      date: new Date()
     }
   }
 }

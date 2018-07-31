@@ -4,13 +4,13 @@
       回答期限
     </label>
     <date-picker
-      :setDate="setDate"
-    ></date-picker>
+      :set-date="setDate"
+    />
   </div>
 </template>
 
 <script>
-import DatePicker from '~/components/atoms/date/DatePicker.vue'
+import DatePicker from "~/components/atoms/date/DatePicker.vue"
 
 export default {
   components: {

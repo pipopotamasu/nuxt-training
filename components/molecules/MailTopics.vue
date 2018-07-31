@@ -3,22 +3,21 @@
     <span>Q.質問項目</span>
     <ol class="topics">
       <li v-for="(topic, i) in topics"
-        :key="topic.id"
-        :class="{ active: topic.active }"
-        @click="toggle(i)"
-      >{{topic.content}}</li>
+          :key="topic.id"
+          :class="{ active: topic.active }"
+          @click="toggle(i)"
+      >{{ topic.content }}</li>
     </ol>
     <ul class="choices">
       <li v-for="topic in topics"
-        :key="topic.id"
-        :class="{ active: topic.active }"
-      >{{topic.id}}</li>
+          :key="topic.id"
+          :class="{ active: topic.active }"
+      >{{ topic.id }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-
 export default {
   props: {
     topics: {

@@ -1,5 +1,5 @@
 <template>
-  <span>{{last_name + ' ' + first_name}} </span>
+  <span>{{ last_name + ' ' + first_name }} </span>
 </template>
 
 <script>
@@ -7,11 +7,11 @@ export default {
   props: {
     last_name: {
       type: String,
-      require: true
+      required: true
     },
     first_name: {
       type: String,
-      require: true
+      required: true
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <img class="search-icon" src="../../../static/icons/search.png" />
+  <img class="search-icon" src="../../../static/icons/search.png" >
 </template>
 
 <style lang="scss" scoped>

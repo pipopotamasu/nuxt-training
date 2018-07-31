@@ -20,21 +20,19 @@ export const state = () => ({
       last_name: "殿馬",
       first_name: "一人",
       sex: 1
-    },
+    }
   ]
-});
+})
 
-export const actions = {
-};
+export const actions = {}
 
 export const getters = {
-  filterUsers: (state) => (filterWord) => {
+  filterUsers: state => filterWord => {
     if (!filterWord) return state.usersWithoutCurrentAndTargetUser
-    return state.usersWithoutCurrentAndTargetUser.filter(
-      user => (user.last_name + user.first_name).includes(filterWord)
+    return state.usersWithoutCurrentAndTargetUser.filter(user =>
+      (user.last_name + user.first_name).includes(filterWord)
     )
   }
-};
+}
 
-export const mutations = {
-};
+export const mutations = {}
