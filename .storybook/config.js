@@ -1,7 +1,7 @@
-import { configure } from "@storybook/vue";
+import { configure } from "@storybook/vue"
 
 function loadStories() {
-  require("../stories");
+  require("../stories")
 }
 
-configure(loadStories, module);
+configure(loadStories, module)
