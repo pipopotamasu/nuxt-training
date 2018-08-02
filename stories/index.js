@@ -13,6 +13,6 @@ storiesOf("atoms", module)
   }))
   .add("DeleteButton", () => ({
     components: { DeleteButton },
-    template: `<delete-button @click="action"></delete-button>`,
+    template: `<delete-button @click.native="action"></delete-button>`,
     methods: { action: action("deleted!") }
   }))
