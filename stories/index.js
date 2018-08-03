@@ -1,5 +1,6 @@
 import { storiesOf } from "@storybook/vue"
 import Centered from "@storybook/addon-centered"
+import { withKnobs, text, color } from "@storybook/addon-knobs"
 import { action } from "@storybook/addon-actions"
 
 import AddButton from "../components/atoms/buttons/AddButton.vue"
